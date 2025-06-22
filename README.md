@@ -42,7 +42,6 @@ Welcome to my **personal portfolio website**—a full-stack Django web applicati
 
 ## 📸 Screenshots
 
-> Add these screenshots in your GitHub repo and update the links below accordingly.
 
 | Page | Preview |
 |------|---------|
