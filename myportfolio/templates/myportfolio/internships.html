@@ -1,0 +1,22 @@
+{% extends 'myportfolio/base.html' %}
+
+{% block title %}Anshuman Mishra - Internships{% endblock %}
+
+{% block content %}
+    <section class="section animate__animated animate__fadeIn">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeInLeft"><i class="fas fa-briefcase" style="color: var(--accent2);"></i> Internships</h2>
+            {% for internship in internships %}
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ internship.company }} - {{ internship.role }}</h5>
+                    <p class="card-text">
+                        {{ internship.duration }} | {{ internship.location }}<br>
+                        {{ internship.description }}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

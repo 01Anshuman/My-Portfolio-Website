@@ -1,0 +1,22 @@
+{% extends 'myportfolio/base.html' %}
+
+{% block title %}Anshuman Mishra - Projects{% endblock %}
+
+{% block content %}
+    <section class="section animate__animated animate__fadeIn">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeInLeft"><i class="fas fa-code" style="color: var(--accent2);"></i> Projects</h2>
+            {% for project in projects %}
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.title }} <a href="{{ project.github_link }}" class="btn btn-sm btn-outline-primary"><i class="fab fa-github" style="color: var(--accent1);"></i> GitHub</a></h5>
+                    <p class="card-text">
+                        Technologies: {{ project.technologies }}<br>
+                        {{ project.description }}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

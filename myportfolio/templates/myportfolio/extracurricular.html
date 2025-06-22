@@ -1,0 +1,25 @@
+{% extends 'myportfolio/base.html' %}
+
+{% block title %}Anshuman Mishra - Extracurricular{% endblock %}
+
+{% block content %}
+    <section class="section animate__animated animate__fadeIn">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeInLeft"><i class="fas fa-star" style="color: var(--accent2);"></i> Extracurricular</h2>
+            {% for extracurricular in extracurriculars %}
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ extracurricular.title }} - {{ extracurricular.role }}</h5>
+                    <p class="card-text">
+                        {{ extracurricular.duration }}<br>
+                        {% if extracurricular.link %}
+                            <a href="{{ extracurricular.link }}" class="btn btn-sm btn-outline-primary"><i class="fas fa-link" style="color: var(--accent1);"></i> Link</a><br>
+                        {% endif %}
+                        {{ extracurricular.description }}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

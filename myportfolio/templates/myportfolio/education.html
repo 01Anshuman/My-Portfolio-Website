@@ -1,0 +1,22 @@
+{% extends 'myportfolio/base.html' %}
+
+{% block title %}Anshuman Mishra - Education{% endblock %}
+
+{% block content %}
+    <section class="section animate__animated animate__fadeIn">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeInLeft"><i class="fas fa-graduation-cap" style="color: var(--accent2);"></i> Education</h2>
+            {% for education in educations %}
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ education.institution }}</h5>
+                    <p class="card-text">
+                        {{ education.degree }} | {{ education.duration }} | {{ education.cgpa_or_percentage }}<br>
+                        {{ education.location }}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

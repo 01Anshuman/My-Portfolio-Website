@@ -1,0 +1,181 @@
+:root {
+    --primary: #2B2A4C; /* Deep Indigo */
+    --secondary: #00D4FF; /* Electric Cyan */
+    --accent1: #FF6B6B; /* Coral Pink */
+    --accent2: #A3E635; /* Lime Green */
+    --background: #E2E8F0; /* Cool Grey */
+    --text: #1A1A2E; /* Charcoal */
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    /* Alternative gradient background: 
+       background: linear-gradient(180deg, #2D3748, #4A5568);
+    */
+}
+
+.navbar {
+    background: linear-gradient(90deg, var(--primary), var(--secondary)) !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand, .nav-link {
+    color: var(--background) !important;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent1) !important;
+    transform: scale(1.1);
+}
+
+.nav-link.active {
+    color: var(--accent1) !important;
+    border-bottom: 2px solid var(--accent2);
+}
+
+.header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent1) 100%);
+    color: var(--background);
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/circuit-board.png');
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.header > * {
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #FFFFFF, #F7FAFC); /* Adjusted for contrast with grey body */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    opacity: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.card.animate {
+    opacity: 1;
+    animation: slideInUp 0.6s ease forwards;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, var(--secondary) 0%, var(--accent1) 100%);
+    color: var(--background);
+}
+
+.card:hover .card-title, .card:hover .card-text {
+    color: var(--background);
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(43, 42, 76, 0.4), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+.card-title {
+    color: var(--primary);
+    transition: color 0.4s ease;
+}
+
+.btn-outline-primary {
+    border-color: var(--accent1);
+    color: var(--accent1);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    color: var(--background);
+    transform: scale(1.1);
+    border-color: transparent;
+}
+
+footer {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: var(--background);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.section {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(247, 250, 252, 0.9)); /* Adjusted for grey body */
+    margin-bottom: 2rem;
+    position: relative;
+    border-radius: 10px;
+}
+
+.section h2 {
+    color: var(--primary);
+    border-bottom: 3px solid var(--accent2);
+    padding-bottom: 0.7rem;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, var(--accent1), var(--accent2));
+    color: var(--background);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top:hover {
+    transform: scale(1.15);
+    opacity: 0.9;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

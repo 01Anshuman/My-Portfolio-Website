@@ -1,0 +1,23 @@
+{% extends 'myportfolio/base.html' %}
+
+{% block title %}Anshuman Mishra - Contact{% endblock %}
+
+{% block content %}
+    <section class="section animate__animated animate__fadeIn">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeInLeft"><i class="fas fa-envelope" style="color: var(--accent2);"></i> Contact Me</h2>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {% if message.tags == 'success' %}alert-success{% else %}alert-danger{% endif %} animate__animated animate__fadeIn">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <form method="post" class="mt-4">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-outline-primary mt-3"><i class="fas fa-paper-plane" style="color: var(--accent1);"></i> Send Message</button>
+            </form>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'myportfolio/base.html' %}
+
+{% block title %}Anshuman Mishra - Skills{% endblock %}
+
+{% block content %}
+    <section class="section animate__animated animate__fadeIn">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeInLeft"><i class="fas fa-tools" style="color: var(--accent2);"></i> Technical Skills</h2>
+            {% for skill in skills %}
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ skill.category }}</h5>
+                    <p class="card-text">{{ skill.skills }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
